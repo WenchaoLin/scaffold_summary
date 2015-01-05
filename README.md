@@ -3,13 +3,15 @@ A simple program for evaluate the assembly of a give genome.
 
 # Usage
 
-Usage: scaffold_summary <*.fa>
+Command line usage can be found by running the following:
 
 `scaffold_summary <*.fa>`
 
-# Sample output 
+# Installing
+Complie the source code by typing `make` in the  folder.
 
-```
+# Sample output 
+`
 Large scaffolds (>1000bp)
 	Largest scaffold: Contig150
 	Largest length: 117003
@@ -27,7 +29,7 @@ All scaffolds
 	Total bases: 117003
 	GC content: 57.813049
 	N rate: 0.000000
-```
+`
 
 # Author
 	Wenchao Lin <liwnenchao@yeah.net>
