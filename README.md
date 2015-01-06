@@ -13,6 +13,7 @@ Complie the source code by typing `make` in the  folder.
 # Sample output
 
 >
+`
 Large scaffolds (>1000bp)
 	Largest scaffold: Contig150
 	Largest length: 117003
@@ -30,7 +31,7 @@ All scaffolds
 	Total bases: 117003
 	GC content: 57.813049
 	N rate: 0.000000
-
+`
 
 # Author
 	Wenchao Lin <liwnenchao@yeah.net>
