@@ -12,7 +12,7 @@ Complie the source code by typing `make` in the  folder.
 
 # Sample output
 
->
+
 `
 Large scaffolds (>1000bp)
 	Largest scaffold: Contig150
