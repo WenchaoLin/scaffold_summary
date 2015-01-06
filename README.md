@@ -1,4 +1,5 @@
 # Synopsis
+
 A simple program for evaluate the assembly of a give genome.
 
 # Usage
@@ -8,6 +9,7 @@ Command line usage can be found by running the following:
 `scaffold_summary <*.fa>`
 
 # Installing
+
 Complie the source code by typing `make` in the  folder.
 
 # Sample output
@@ -34,4 +36,5 @@ All scaffolds
 ```
 
 # Author
+
 	Wenchao Lin <liwnenchao@yeah.net>
