@@ -1,6 +1,6 @@
 # Synopsis
 
-A simple program for evaluate the assembly of a give genome.
+A simple program for evaluate the assembly of a give genome. Shows simple statistics about a fasta file containing many sequences. The result includes the name, N50, N90, GC Content, N rate, number of sequences etc., as well as various other information both in large scaffolds (>1000 bp) and in all sequences. Command line usage for scaffold_summary can be found by typing scaffold_summary. 
 
 # Usage
 
@@ -16,23 +16,25 @@ Complie the source code by typing `make` in the  folder.
 
 
 ```
+File: 454LargeContigs.fna
+
 Large scaffolds (>1000bp)
-	Largest scaffold: Contig150
-	Largest length: 117003
-	Scaffolds 1000bp+: 1
-	Bases in largest scaffold: 117003
-	N50 scaffold: 1
-	N90 length: 117003
-	N90 scaffold: 1
-	N90 length: 117003
-	G+C content: 57.813049%
-	N rate: 0.000000%
+	Largest scaffold: contig00001 length=24332   numreads=1033
+	Largest scaffold size: 24332
+	The number of large Scaffolds: 154620
+	Bases in large scaffolds: 351138116
+	The number of N50 scaffolds: 56746
+	N50 length: 2253
+	The number of N90 scaffolds: 159448
+	N90 length: 960
+	G+C content: 4.7780%
+	N rate: 0.0000%
 
 All scaffolds
-	Number: 1
-	Total bases: 117003
-	GC content: 57.813049
-	N rate: 0.000000
+	The number of sequences: 214338
+	Total bases: 395414334
+	GC content: 4.2429%
+	N rate: 0.0000%
 ```
 
 # Author

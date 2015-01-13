@@ -15,7 +15,7 @@ int main(int argc,char **argv)
 {
     FASTAFILE *ffp;
     char *seq;
-    unsigned long fasta[10000];
+    unsigned long fasta[500000];
     char *seqname,*L_scaffold_name;//name of current sequence
     int seqlen;   //length of current sequence
     unsigned long L_scaffold_num = 0;   //numbers of lagrge scarffold (1000bp+)
@@ -45,6 +45,7 @@ int main(int argc,char **argv)
     {
         fasta[n]=seqlen; 
         n++;
+	//printf("now %d\tseqlen:%d\n",n,seqlen);
         if(seqlen>L_scaffold_len){
             L_scaffold_len = seqlen;
             L_scaffold_name = seqname;
@@ -80,6 +81,7 @@ int main(int argc,char **argv)
 
         free(seq);
     }
+
     qsort(fasta,n,sizeof(unsigned long),intcomp);
     //    printf("Ns: %1.0f\n",num_n);
     //    printf("GCs: %1.0f\n",num_gc);
@@ -95,14 +97,14 @@ int main(int argc,char **argv)
         if(sum>=0.5*total_base && n50 == 0){n50 = fasta[i];n50_num = i+1;}
         if(sum>=0.9*total_base && n90 == 0){n90 = fasta[i];n90_num = i+1;break;}
     }
-    printf("File: %s\n",argv[1]);
+    printf("File: %s\n\n",argv[1]);
     printf("Large scaffolds (>1000bp)\n");
-    printf("\tLargest scaffold: %s\n\tLargest length: %ld\n",L_scaffold_name,L_scaffold_len);
-    printf("\tScaffolds 1000bp+: %ld\n\tBases in largest scaffold: %ld\n",L_scaffold_num,L_scaffold_base);
-    printf("\tN50 scaffold: %d\n\tN90 length: %ld\n",n50_num,n50);
-    printf("\tN90 scaffold: %d\n\tN90 length: %ld\n",n90_num,n90);
-    printf("\tG+C content: %f%%\n\tN rate: %f%%\n",gc_content1,n_ratio1);
-    printf("\nAll scaffolds\n\tNumber: %ld\n\tTotal bases: %ld\n\tGC content: %f\n\tN rate: %f\n",total_seq,total_base,gc_content2,n_ratio2);
+    printf("\tLargest scaffold: %s\n\tLargest scaffold size: %ld\n",L_scaffold_name,L_scaffold_len);
+    printf("\tThe number of large Scaffolds: %ld\n\tBases in large scaffolds: %ld\n",L_scaffold_num,L_scaffold_base);
+    printf("\tThe number of N50 scaffolds: %d\n\tN50 length: %ld\n",n50_num,n50);
+    printf("\tThe number of N90 scaffolds: %d\n\tN90 length: %ld\n",n90_num,n90);
+    printf("\tG+C content: %.4f%%\n\tN rate: %.4f%%\n",gc_content1,n_ratio1);
+    printf("\nAll scaffolds\n\tThe number of sequences: %ld\n\tTotal bases: %ld\n\tGC content: %.4f%%\n\tN rate: %.4f%%\n",total_seq,total_base,gc_content2,n_ratio2);
    CloseFASTA(ffp);
     exit(0);
 }
