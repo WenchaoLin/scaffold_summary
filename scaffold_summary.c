@@ -36,7 +36,7 @@ int main(int argc,char **argv)
     float gc_content2,n_ratio2;
 	
     if(argc==1||argc>2){
-	printf("\nUsage: scaffold_summary <*.fa>\n\tBrief summary of N50,N90 etc. of sequences in specificed fasta.\n\tWenchao Lin <liwnenchao@yeah.net>\n\n");
+	printf("Version 1.0.1\nUsage: scaffold_summary <*.fa>\n\tBrief summary of N50,N90 etc. of sequences in specificed fasta.\n\tWenchao Lin <linwenchao@yeah.net>\n\n");
 	exit(0);
     }
 

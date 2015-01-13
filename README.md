@@ -39,4 +39,5 @@ All scaffolds
 
 # Author
 
-	Wenchao Lin <liwnenchao@yeah.net>
+	Wenchao Lin <linwenchao@yeah.net>
+	Tianjin Biochip Corporation @ 2015
