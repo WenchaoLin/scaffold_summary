@@ -14,5 +14,5 @@ typedef struct fastafile_s {
 } FASTAFILE;
 
 extern FASTAFILE *OpenFASTA(char *seqfile);
-extern int        ReadFASTA(FASTAFILE *fp, char **ret_seq, char **ret_name, int *ret_L);
+extern int        ReadFASTA(FASTAFILE *fp, char **ret_seq, char **ret_name, unsigned long *ret_L);
 extern void       CloseFASTA(FASTAFILE *ffp);

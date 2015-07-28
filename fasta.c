@@ -107,13 +107,13 @@ OpenFASTA(char *seqfile)
 }
 
 int
-ReadFASTA(FASTAFILE *ffp, char **ret_seq, char **ret_name, int *ret_L)
+ReadFASTA(FASTAFILE *ffp, char **ret_seq, char **ret_name, unsigned long *ret_L)
 {
   char *s;
   char *name;
   char *seq;
-  int   n;
-  int   nalloc;
+  long n;
+  long nalloc;
   
   /* Peek at the lookahead buffer; see if it appears to be a valid FASTA descline.
    */
@@ -192,7 +192,7 @@ main(int argc, char **argv)
   FASTAFILE *ffp;
   char *seq;
   char *name;
-  int   L;
+  unsigned long L;
 				/* argv[1] is the name of a FASTA file */
   ffp = OpenFASTA(argv[1]);
   while (ReadFASTA(ffp, &seq, &name, &L))

@@ -4,9 +4,10 @@
 #include <ctype.h>
 
 #include "fasta.h"
+#define VERSION "1.0.1"
 
 int intcomp(const void *x,const void *y){
-    return *(int *)y-*(int *)x;
+    return *(long *)y-*(long *)x;
 }
 
 
@@ -17,7 +18,7 @@ int main(int argc,char **argv)
     char *seq;
     unsigned long fasta[500000];
     char *seqname,*L_scaffold_name;//name of current sequence
-    int seqlen;   //length of current sequence
+    unsigned long seqlen;   //length of current sequence
     unsigned long L_scaffold_num = 0;   //numbers of lagrge scarffold (1000bp+)
     unsigned long L_scaffold_base = 0;  //bases of large scarffold (1000bp+)
     unsigned long total_base = 0;    //total bases of all scaffold
@@ -25,18 +26,18 @@ int main(int argc,char **argv)
     unsigned long n50 = 0;
     unsigned long n90 = 0;
     unsigned long sum = 0;
-    int n50_num,n90_num;
-    int i,n = 0;
+    unsigned long n50_num,n90_num;
+    unsigned long i,n = 0;
     unsigned long total_seq = 0;
-    float num_n1 =0;
-    float num_n2 =0;
-    float num_gc1 =0;
-    float num_gc2 =0;
+    double num_n1 =0;
+    double num_n2 =0;
+    double num_gc1 =0;
+    double num_gc2 =0;
     float gc_content1,n_ratio1;
     float gc_content2,n_ratio2;
 	
     if(argc==1||argc>2){
-	printf("Version 1.0.1\nUsage: scaffold_summary <*.fa>\n\tBrief summary of N50,N90 etc. of sequences in specificed fasta.\n\tWenchao Lin <linwenchao@yeah.net>\n\n");
+	printf("\nUsage: scaffold_summary <*.fa>\n\tBrief summary of N50,N90 etc. of sequences in specificed fasta.\n\t<version:%s>\n\tWenchao Lin <liwnenchao@yeah.net>\n\n",VERSION);
 	exit(0);
     }
 
@@ -99,10 +100,10 @@ int main(int argc,char **argv)
     }
     printf("File: %s\n\n",argv[1]);
     printf("Large scaffolds (>1000bp)\n");
-    printf("\tLargest scaffold: %s\n\tLargest scaffold size: %ld\n",L_scaffold_name,L_scaffold_len);
-    printf("\tThe number of large Scaffolds: %ld\n\tBases in large scaffolds: %ld\n",L_scaffold_num,L_scaffold_base);
-    printf("\tThe number of N50 scaffolds: %d\n\tN50 length: %ld\n",n50_num,n50);
-    printf("\tThe number of N90 scaffolds: %d\n\tN90 length: %ld\n",n90_num,n90);
+    printf("\tLargest scaffold: %s\n\tLargest scaffold length: %ld\n",L_scaffold_name,L_scaffold_len);
+    printf("\t# of large Scaffolds: %ld\n\tLength of large scaffolds: %ld bp\n",L_scaffold_num,L_scaffold_base);
+    printf("\t# of N50 scaffolds: %d\n\tN50 length: %ld bp\n",n50_num,n50);
+    printf("\t# of N90 scaffolds: %d\n\tN90 length: %ld bp\n",n90_num,n90);
     printf("\tG+C content: %.4f%%\n\tN rate: %.4f%%\n",gc_content1,n_ratio1);
     printf("\nAll scaffolds\n\tThe number of sequences: %ld\n\tTotal bases: %ld\n\tGC content: %.4f%%\n\tN rate: %.4f%%\n",total_seq,total_base,gc_content2,n_ratio2);
    CloseFASTA(ffp);
