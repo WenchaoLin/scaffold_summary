@@ -1,6 +1,6 @@
 # Synopsis
 
-removed to [https://github.com/WenchaoLin/assemblyStatics][https://github.com/WenchaoLin/assemblyStatics]
+pleased use [https://github.com/WenchaoLin/assemblyStatics] instead
 
 
 # Author
